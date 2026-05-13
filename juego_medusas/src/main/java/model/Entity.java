@@ -1,8 +1,8 @@
 package model;
 
-import javax.imageio.ImageIO;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.InputStream;
 
 /**
  * Clase abstracta que representa la base de todas las entidades del juego.
@@ -14,9 +14,6 @@ import java.io.InputStream;
  * @version 1.0
  */
 public abstract class Entity {
-
-
-
     /**
      * posición en X del de la entidad
      */
@@ -50,7 +47,7 @@ public abstract class Entity {
     /**
      * Constante que define la dirección de movimiento hacia arriba
      */
-    private static final int DIR_UP = 1;
+    private static final int DIR_UP = 2;
 
     /**
      * Constate que define cuando no hay dirección
@@ -188,44 +185,5 @@ public abstract class Entity {
      */
     public void setDirection(int direction) {
         this.direction = direction;
-    }
-
-    /**
-     * Carga una imagen desde la carpeta de recursos.
-     * Uso: Entidad.cargarImagen("pacman_left.png")
-     */
-    public static BufferedImage uploadImage(String nombre) {
-        try {
-            InputStream is = Entity.class.getResourceAsStream("/images/" + nombre);
-            if (is == null) {
-                System.err.println("Imagen no encontrada: " + nombre);
-                return null;
-            }
-            return ImageIO.read(is);
-        } catch (Exception e) {
-            System.err.println("Error cargando imagen: " + nombre);
-            return null;
-        }
-    }
-
-    /**
-     * Cada clase define su propia clase de actualización de entidad
-     */
-
-    public abstract void update();
-
-    public int calculateDy(){
-        if(direction == DIR_UP) return 1;
-        return 0;
-    }
-
-    public int setOrigin(int origin) {
-        switch (origin) {
-            case 0: return 0;
-            case 1: return 1;
-            case 2: return 2;
-            case 3: return 3;
-        }
-        return 0;
     }
 }
