@@ -4,19 +4,18 @@ import java.awt.image.BufferedImage;
 import java.util.Random;
 
 /**
- * Clase para el funcionamiento de la medusa normal
+ * Clase que define el comportamiento de la medusa de salud. Esta medusa añade una vida al jugador cuando este la revienta.
+ * Esta no resta vidas al llegar a la superficie
  *
  * @author Miguel Arias
  * @version 1.0
  *
  * Notas de la version:
- *  1.0:
- *      Inicialización de la clase, se añaden parametros, constructores, getters, setters y metodo update heredado.
- *  2.0:
+ *  1.0: Inicialización de la clase, se añade constructores, parametros, getters, setters y metodo update heredado
  *
  */
 
-public class NormalJellyfish extends Jellyfish {
+public class HealthJellyfish extends Jellyfish {
     /**
      * Velocidad de la medusa
      */
@@ -48,13 +47,8 @@ public class NormalJellyfish extends Jellyfish {
      * @param y      Posición vertical inicial de la entidad.
      * @param sprite Imagen que representa visualmente la entidad.
      */
-    public NormalJellyfish(int x, int y, BufferedImage sprite) {
+    public HealthJellyfish(int x, int y, BufferedImage sprite) {
         super(x, y, sprite);
-        this.speed = 3;
-        setX(INITIAL_X);
-        setY(INITIAL_Y);
-        setActive(true);
-        setSpeed(3);
     }
 
     /**
@@ -74,13 +68,8 @@ public class NormalJellyfish extends Jellyfish {
         this.speed = speed;
     }
 
-    /**
-     * Metodo Update() heredado de clase padre
-     */
     @Override
     public void update() {
         setY(getY()+calculateDy()*speed);
     }
-
-
 }

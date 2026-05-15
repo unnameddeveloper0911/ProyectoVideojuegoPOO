@@ -1,8 +1,6 @@
 package model;
 
 import javax.imageio.ImageIO;
-import javax.swing.*;
-import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.InputStream;
 
@@ -15,7 +13,7 @@ import java.io.InputStream;
  * @author Daniel Blandón, Miguel Arias, Yulieth Paola Domínguez
  * @version 1.0
  */
-public abstract class Entity {
+public abstract class Jellyfish {
     /**
      * posición en X del de la entidad
      */
@@ -65,7 +63,7 @@ public abstract class Entity {
      * @param y      Posición vertical inicial de la entidad.
      * @param sprite Imagen que representa visualmente la entidad.
      */
-    public Entity(int x, int y, BufferedImage sprite) {
+    public Jellyfish(int x, int y, BufferedImage sprite) {
         this.x = x;
         this.y = y;
         this.sprite = sprite;
@@ -195,7 +193,7 @@ public abstract class Entity {
      */
     public static BufferedImage uploadImage(String nombre) {
         try {
-            InputStream is = Entity.class.getResourceAsStream("/images/" + nombre);
+            InputStream is = Jellyfish.class.getResourceAsStream("/images/" + nombre);
             if (is == null) {
                 System.err.println("Imagen no encontrada: " + nombre);
                 return null;
