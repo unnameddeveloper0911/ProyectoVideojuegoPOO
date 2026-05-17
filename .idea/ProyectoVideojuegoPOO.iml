@@ -11,5 +11,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="jinput-2.0.10" level="project" />
+    <orderEntry type="library" exported="" name="jinput-2.0.10-natives-all" level="project" />
   </component>
 </module>
