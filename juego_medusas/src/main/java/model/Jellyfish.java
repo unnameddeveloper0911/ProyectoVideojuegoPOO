@@ -12,6 +12,9 @@ import java.io.InputStream;
  *
  * @author Daniel Blandón, Miguel Arias, Yulieth Paola Domínguez
  * @version 1.0
+ *
+ *
+ *
  */
 public abstract class Jellyfish {
     /**

@@ -4,18 +4,12 @@ import java.awt.image.BufferedImage;
 import java.util.Random;
 
 /**
- * Clase que define el comportamiento de la medusa de salud. Esta medusa añade una vida al jugador cuando este la revienta.
- * Esta no resta vidas al llegar a la superficie
- *
- * @author Miguel Arias
- * @version 1.0
- *
- * Notas de la version:
- *  1.0: Inicialización de la clase, se añade constructores, parametros, getters, setters y metodo update heredado
- *
+ * Clase que define el comportamiento de la medusa neutral.
+ * Esta medusa solo le resta vidas al jugador si este las revienta. Pueden llegar a la superficie
  */
 
-public class HealthJellyfish extends Jellyfish {
+public class NeutralJellyfish extends Jellyfish {
+
     /**
      * Velocidad de la medusa
      */
@@ -47,7 +41,7 @@ public class HealthJellyfish extends Jellyfish {
      * @param y      Posición vertical inicial de la entidad.
      * @param sprite Imagen que representa visualmente la entidad.
      */
-    public HealthJellyfish(int x, int y, BufferedImage sprite) {
+    public NeutralJellyfish(int x, int y, BufferedImage sprite) {
         super(x, y, sprite);
     }
 

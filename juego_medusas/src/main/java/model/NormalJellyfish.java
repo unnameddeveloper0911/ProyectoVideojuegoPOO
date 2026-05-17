@@ -75,7 +75,7 @@ public class NormalJellyfish extends Jellyfish {
     }
 
     /**
-     * Metodo Update() heredado de clase padre
+     * Metodo Update() heredado de clase padre, actualiza la posición de la medusa
      */
     @Override
     public void update() {
