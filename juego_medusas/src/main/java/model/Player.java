@@ -5,13 +5,15 @@ package model;
  *
  * @author Miguel Arias
  *
- * @version 0.2
+ * @version 0.3
  * Notas de version:
  *  0.1:
- *      inicialización de la clase, se añaden parametros, constructores, getters y setter
+ *      inicialización de la clase, se añaden parámetros, constructores, getters y setter
  *
  *  0.2:
- *      añadir metodo de tipo toString para futuros usos en el leaderboard
+ *      añadir método de tipo toString para futuros usos en el leaderboard
+ *  0.3
+ *      añadir métodos de sumar, restar vidas y sumar puntos
  *
  */
 
@@ -36,16 +38,20 @@ public class Player {
      */
     private String name;
 
+    /**
+     * Vidas actuales del jugador
+     */
+    private int lives;
 
     /**
      * Constructor de la clase Jugador
      *
      * @param name
-     * @param points
      */
-    public Player(String name, int points) {
+    public Player(String name) {
         this.name = name;
         this.points = START_POINTS;
+        this.lives = START_LIVES;
     }
 
     /**
@@ -103,7 +109,23 @@ public class Player {
     }
 
     /**
-     * Metodo para convertir la información del jugador en un solo string para usar en el leaderboard
+     * Getter de vidas
+     * @return vidas
+     */
+    public int getLives() {
+        return lives;
+    }
+
+    /**
+     * Setter de vidas
+     * @param lives
+     */
+    public void setLives(int lives) {
+        this.lives = lives;
+    }
+
+    /**
+     * Método para convertir la información del jugador en un solo string para usar en el leaderboard
      * @return "{name} {points}"
      */
 
@@ -111,5 +133,25 @@ public class Player {
         return name + " " + points;
     }
 
+    /**
+     * Método para añadir puntos al jugador
+     */
+    public void addPoints() {
+        this.points += points;
+    }
+
+    /**
+     * Método para restar vidas
+     */
+    public void lossLive(){
+        this.lives -= lives;
+    }
+
+    /**
+     * Método para añadirle vidas al jugador
+     */
+    public void addLives() {
+        this.lives += lives;
+    }
 
 }

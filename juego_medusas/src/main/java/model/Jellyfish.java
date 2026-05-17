@@ -11,9 +11,13 @@ import java.io.InputStream;
  * para definir su comportamiento y forma de dibujarse en pantalla.
  *
  * @author Daniel Blandón, Miguel Arias, Yulieth Paola Domínguez
- * @version 1.0
+ * @version 1.1
  *
- *
+ * Notas de la versión:
+ *  1.0:
+ *      Se crea la clase, se definen parametros, getters, setters y constructor. También se añade el metodo abstracto
+ *  1.1:
+ *      Se define el metodo para randomizar el lugar de salida de las medusas en el mapa
  *
  */
 public abstract class Jellyfish {
@@ -214,10 +218,22 @@ public abstract class Jellyfish {
 
     public abstract void update();
 
+    /**
+     * Método para calcular la dirección
+     * @return dirección de movimiento
+     */
+
     public int calculateDy(){
         if(direction == DIR_UP) return 1;
         return 0;
     }
+
+    /**
+     * Método para definir el lugar de salida de las medusas
+     * @param origin
+     * @return posición del 0 al 3
+     *
+     */
 
     public int setOrigin(int origin) {
         switch (origin) {
