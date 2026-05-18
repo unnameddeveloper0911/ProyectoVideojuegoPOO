@@ -1,73 +1,45 @@
 package model;
 
 import java.awt.image.BufferedImage;
-import java.util.Random;
 
 /**
  * Clase que define el comportamiento de la medusa neutral.
- * Esta medusa solo le resta vidas al jugador si este las revienta. Pueden llegar a la superficie
+ * Esta medusa resta vidas al jugador si llega a la superficie
+ * sin ser eliminada.
+ *
+ * @author Miguel Arias
+ * @version 1.1
+ *
+ * Notas de versión:
+ *  1.0: Inicialización de la clase, se añaden constructores, parámetros,
+ *       getters, setters y método update heredado.
+ *  1.1: Se elimina speed duplicado, se corrige el constructor para recibir
+ *       speed y points del padre, se elimina lógica incorrecta de INITIAL_X
+ *       y setOrigin().
  */
-
 public class NeutralJellyfish extends Jellyfish {
 
     /**
-     * Velocidad de la medusa
-     */
-    private int speed;
-
-    /**
-     * Random para definir lugar de origen
-     */
-    Random rand=new Random();
-    /**
-     * Definir posicion de inicio
-     */
-    private int origin= rand.nextInt(4);
-
-    /**
-     * Posicion inicial en X
-     */
-    private final int INITIAL_X= setOrigin(origin);
-    /**
-     * Posición inicial en Y
-     */
-    private final int INITIAL_Y= 0;
-
-    /**
-     * Constructor que inicializa la entidad con su posición y sprite.
-     * El ancho y alto se calculan automáticamente a partir de la imagen.
+     * Constructor que inicializa la medusa neutral con su posición,
+     * sprite, velocidad y puntos.
+     * El ancho y alto se calculan automáticamente a partir del sprite.
      *
-     * @param x      Posición horizontal inicial de la entidad.
-     * @param y      Posición vertical inicial de la entidad.
-     * @param sprite Imagen que representa visualmente la entidad.
+     * @param x      Posición horizontal inicial de la medusa.
+     * @param y      Posición vertical inicial de la medusa.
+     * @param sprite Imagen que representa visualmente la medusa.
+     * @param speed  Velocidad de desplazamiento en píxeles por frame.
+     * @param points Puntos que otorga al ser eliminada.
      */
-    public NeutralJellyfish(int x, int y, BufferedImage sprite) {
-        super(x, y, sprite);
+    public NeutralJellyfish(int x, int y, BufferedImage sprite, int speed, int points) {
+        super(x, y, sprite, speed, points);
     }
 
     /**
-     * Getter para velocidad
-     * @return speed
-     */
-    public int getSpeed() {
-        return speed;
-    }
-
-    /**
-     * Setter para velocidad
-     * @param speed
-     */
-
-    public void setSpeed(int speed) {
-        this.speed = speed;
-    }
-
-
-    /**
-     * Metodo update heredado, actualiza la posición de la medusa
+     * Actualiza la posición de la medusa moviéndola hacia arriba
+     * según su velocidad en cada frame del juego.
      */
     @Override
     public void update() {
-        setY(getY()+calculateDy()*speed);
+        setY(getY() + calculateDy() * getSpeed());
     }
 }
