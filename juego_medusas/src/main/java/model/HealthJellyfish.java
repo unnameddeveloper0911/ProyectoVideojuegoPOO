@@ -7,7 +7,7 @@ import java.awt.image.BufferedImage;
  * Esta medusa añade una vida al jugador cuando es eliminada
  * y no resta vidas al llegar a la superficie.
  *
- * @author Miguel Arias
+ * @author Miguel Arias, Daniel Blandón
  * @version 1.1
  *
  * Notas de versión:

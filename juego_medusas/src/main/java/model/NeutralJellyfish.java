@@ -7,7 +7,7 @@ import java.awt.image.BufferedImage;
  * Esta medusa resta vidas al jugador si llega a la superficie
  * sin ser eliminada.
  *
- * @author Miguel Arias
+ * @author Miguel Arias, Daniel Blandón
  * @version 1.1
  *
  * Notas de versión:

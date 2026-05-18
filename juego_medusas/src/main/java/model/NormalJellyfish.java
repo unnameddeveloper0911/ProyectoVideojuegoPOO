@@ -7,7 +7,7 @@ import java.awt.image.BufferedImage;
  * Esta medusa resta vidas al jugador si llega a la superficie
  * sin ser eliminada y otorga 10 puntos al ser disparada.
  *
- * @author Miguel Arias
+ * @author Miguel Arias, Daniel Blandón
  * @version 1.1
  *
  * Notas de versión:
